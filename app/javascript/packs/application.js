@@ -7,6 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+//= require swiper/js/swiper.js
+//= require swiper.js
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
