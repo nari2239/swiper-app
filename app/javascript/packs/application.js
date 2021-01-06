@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
+require("../modal")
 //= require swiper/js/swiper.js
 //= require swiper.js
 
