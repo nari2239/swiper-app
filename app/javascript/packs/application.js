@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require("../modal")
+import 'bootstrap';
+import '../stylesheets/application';
 //= require swiper/js/swiper.js
 //= require swiper.js
 
