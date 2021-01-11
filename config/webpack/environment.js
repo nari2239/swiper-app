@@ -1,12 +1,24 @@
 const { environment } = require('@rails/webpacker')
-const webpack = require('webpack')
+const { VueLoaderPlugin } = require('vue-loader')
+const vue = require('./loaders/vue')
 
-environment.plugins.prepend('Provide',
+environment.plugins.prepend('VueLoaderPlugin', new VueLoaderPlugin())
+environment.loaders.prepend('vue', vue)
+
+// Vue.js フル版（Compiler入り）
+environment.config.resolve.alias = { 'vue$': 'vue/dist/vue.esm.js' }
+
+// ここから
+// jQueryとBootstapのJSを使えるように
+const webpack = require('webpack')
+environment.plugins.prepend(
+  'Provide',
   new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
-    jquery: 'jquery',
+    Popper: 'popper.js'
   })
 )
+// ここまで
 
 module.exports = environment
